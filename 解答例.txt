@@ -1,0 +1,1642 @@
+■第1章
+
+●練習問題　1.1
+
+3.
+javascript:alert('Hello world!');
+
+
+■第2章
+
+●練習問題　2.1
+
+5.
+var data = [ 1, 'one', true ];
+
+
+6.
+var convertCtoF = function(c) {
+  var f = 9 / 5 * c + 32;
+  return f;
+}
+
+
+●この章の理解度チェック
+
+4.
+x += 10;
+
+
+6.
+(1 + 1 / 8) * 8
+
+
+7.
+var data = new Array(1, 'one', true);
+
+
+■第3 章
+
+●練習問題　3.1
+
+1.
+if (x % 2 == 0) {
+  alert(x + 'は偶数である');
+}
+
+
+3.
+(year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+
+
+●練習問題　3.2
+
+1.
+if (x > y) {
+  alert('xのほうが大きい');
+} else if (x == y) {
+  alert('xとyは等しい');
+} else {
+  alert('yのほうが大きい');
+}
+
+
+2.
+if (score >= 80) {
+  alert(score + '点は評価Aです');
+} else if (score >= 70) {
+  alert(score + '点は評価Bです');
+} else if (score >= 60) {
+  alert(score + '点は評価Cです');
+} else {
+  alert(score + '点は評価Dです');
+}
+
+
+●練習問題　3.3
+
+1.
+for (var i = 20 ; i >= 0; i--) {
+  document.write(i, '<br/>');
+}
+
+
+●練習問題　3.4
+
+2.
+var sum = 0;
+for (var num in data) {
+  if (typeof data[num] == 'number') {
+    sum += data[num];
+  }
+}
+alert(sum);
+
+
+●練習問題　3.5
+
+1.
+var i = 0;
+while (i < 10) {
+  document.write(i, '<br/>');
+  i++;
+}
+
+
+2.
+var sum = 0;
+var day = 0;
+while (sum < 10000) {
+  day++;
+  sum += day * 10;
+}
+alert(day);
+
+
+●練習問題　3.6
+
+2.
+userName == null || userName == ’’
+
+
+●練習問題　3.7
+
+1.
+switch(day) {
+  case 0:
+    alert('日曜日');
+    break;
+  case 1:
+    alert('月曜日');
+    break;
+  case 2:
+    alert('火曜日');
+    break;
+  case 3:
+    alert('水曜日');
+    break;
+  case 4:
+    alert('木曜日');
+    break;
+  case 5:
+    alert('金曜日');
+    break;
+  case 6:
+    alert('土曜日');
+    break;
+  default:
+    alert('エラー');
+    break;
+}
+
+
+●練習問題　3.8
+
+2.
+var userName;
+for ( ; ; ) {
+  userName = prompt('ユーザ名を入力してください', '');
+  if (userName != null && userName != '') {
+    break;
+  }
+}
+alert(userName);
+
+
+●練習問題　3.9
+
+2.
+for (var i = 1; i <= 100; i++) {
+  if (i % 3 == 0) {
+    continue;
+  }
+  document.write(i, '<br/>');
+}
+
+
+●この章の理解度チェック
+
+3.
+for (var i = 1; i <= 10; i++) {
+  document.write(i, '<br/>');
+}
+
+
+4.
+var count = 0;
+for (var num in data) {
+  if (typeof data[num] == 'number' &&
+    data[num] % 2 == 0) {
+    count++;
+  }
+}
+alert(count);
+
+
+6.
+for (var i = 1; i <= 100; i++) {
+  if (i % 5 == 0) {
+    continue;
+  }
+  document.write(i, '<br/>');
+}
+
+
+8.
+var msg;
+switch (typeof x) {
+  case 'number':
+    msg = '数値';
+    break;
+  case 'string':
+    msg = '文字列';
+    break;
+  case 'boolean':
+    msg = '論理値';
+    break;
+  default:
+    msg = 'その他';
+    break;
+}
+alert(msg);
+
+
+■第4章
+
+●練習問題　4.1
+
+2.
+var s = '1 + 1';
+var result = eval(s);
+alert(result);
+
+
+●練習問題　4.2
+
+1.
+var n = new Number(1234567);
+var v = n.toExponential(2);
+alert(v);
+
+
+2.
+var b = new Boolean(true);
+alert(typeof b); // 'object'
+
+
+3.
+var s= 'false';
+// 文字列が'true'の場合のみtrue、それ以外はfalse
+var b = ('true' == s);
+alert(b);
+
+
+4.
+var i = Number.POSITIVE_INFINITY;
+alert(i);
+
+
+●練習問題　4.3
+
+1.
+var d = new Date('2008/07/08');
+
+
+2.
+var d = new Date('2008/07/08');
+// 日本語ロケールで文字列を取得
+var str = d.toLocaleDateString();
+alert(str); // '2008年7月8日'
+
+
+3.
+var d = new Date(new Date().getTime() +
+(3 * 24 * 60 * 60 * 1000));
+
+
+// または、以下のような書き方も可能
+var d = new Date();
+d.setDate(d.getDate() + 3);
+
+
+4.
+var now = new Date(); // 現在日時でオブジェクトを生成
+alert(now.getDate());
+
+
+●練習問題　4.4
+
+1.
+var ary = new Array('aaa', 'bbb', 'ccc');
+
+
+2.
+ary.unshift('eee');
+
+
+3.
+ary.push('aaa');
+alert(ary); // 'aaa,bbb,ccc,aaa'
+ary.sort();
+alert(ary); // 'aaa,aaa,bbb,ccc'
+
+
+4.
+var ary = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var result = ary.filter(function(value) {
+  return (value % 2 != 0 && value % 3 != 0);});
+alert(result); // "1, 5, 7"
+
+
+●練習問題　4.5
+
+1.
+var s = 'aaa,bbb,';
+if (s.substring(s.length -1) == ',') { // 最後の文字がカンマの場合は
+  s = s.substring(0, s.length -1); // 末尾の文字を削除
+}
+
+
+2.
+var s = 'aaa,bbb,ccc,ddd';
+s = s.toUpperCase(); // 大文字に変換
+var arr = s.split(','); // カンマ区切りを分解
+alert(arr.join('\n'));
+
+
+3.
+var s = 'aaa,bbb,CCC';
+// indexOfは正規表現が使えないので'-1'になる
+alert('indexOf:' + s.indexOf(',.*,'));
+// searchは正規表現が使えるので'3'になる
+alert('search:' + s.search(',.*,'));
+
+
+4.
+var str = '1234567890abcdefghij'; // 検索元の文字列
+var result = str.search('a'); // 'a'の位置を検索
+if (result < 0) { // 文字が見つからない場合は-1になっている
+  alert("文字列'a'は見つかりませんでした。");
+} else {
+  alert("文字列'a'は" + (result +1) + "文字目にあります。");
+}
+
+
+●練習問題　4.6
+1.
+var result = Math.floor(123.45);
+alert(result);
+
+
+2.
+var d = Math.round (10 * (3 * 3 * Math.PI)) / 10;
+
+
+3.
+var r = Math.floor(Math.random() * 11) +10;
+
+
+4.
+var v = Math.ceil(Math.SQRT2 * 10) / 10;
+
+
+●練習問題　4.7
+
+1.
+var s = 'abcdefghijklmn123';
+var regexp = new RegExp('[0-9]'); // 数字を探すための正規表現
+var result = regexp.test(s);
+alert(result);
+
+
+2.
+var s = 'aaa<div>bbb</div>ccc<div>ddd</div>eee';
+var regexp = new RegExp('<div>.*</div>'); // <div>タグを判別
+var result = regexp.test(s);
+alert(result);
+
+
+3.
+var target = 'aaa<div>bbb</div>ccc<div>ddd</div>eee';
+var regexp = new RegExp('<div>.*?</div>', 'g');
+var result = regexp.exec(target);
+while (result != null) {
+  alert(result.index +' : ' + result[0]);
+  result = regexp.exec(target);
+}
+
+
+●練習問題　4.8
+
+2.
+var err = new URIError();
+
+
+3.
+try {
+  throw new Error('エラー');
+} catch (error) {
+  alert(error.message);
+}
+
+
+4.
+var error = new Error();
+alert(error.message);
+
+
+●練習問題　4.9
+
+1.
+var f = new Function("arg1", "arg2", "return arg1 + arg2;");
+
+
+3.
+var o = new Object('hello');
+alert(o instanceof String); // 'true'が表示される
+
+
+●この章の理解度チェック
+
+1.
+var s = 'aaa,bbb,ccc,ddd';
+s = s.replace(/,/g, '/');   // 正規表現ですべてのカンマを置換
+alert(s);
+
+// スラッシュ区切りの文字列で出力する方法もある
+var s = 'aaa,bbb,ccc,ddd';
+var ary = s.split(','); // カンマ区切りで配列に分解
+s = ary.join('/'); // 配列をスラッシュ区切りで出力
+alert(s);
+
+// while ループを使用して、置換を繰り返す方法
+var s = 'aaa,bbb,ccc,ddd';
+while (s.indexOf(',') >= 0) { // カンマがなくなるまでループ
+  s = s.replace(',', '/');
+}
+alert(s);
+
+
+2.
+var s = 'aaa<div>bbb</div>ccc<div>ddd</div>eee';
+var divStringAry = new Array(); // 結果を入れる配列
+// <div>タグを繰り返し検索
+var regexp = new RegExp('<div>.*?</div>', 'g');
+var result = regexp.exec(s);
+while (result != null) { // 繰り返し検索
+  var divStr = result[0];
+  // 先頭と末尾のタグを取り除く
+  divStr = divStr.substring('<div>'.length,
+           divStr.length - '</div>'.length);
+  divStringAry.push(divStr); // 見つかった文字列を配列の最後に詰め込む
+  result = regexp.exec(s); // 次を検索
+}
+alert(divStringAry.join('\n'));
+
+
+3.
+var a = 'aabbccdde1e23ffgg';
+var b = 'aabbccddee123ffgg';
+var aPos = a.search(/[0-9]/);
+var bPos = b.search(/[0-9]/);
+if (aPos < bPos) {
+  alert('aのほうが前にあります');
+} else {
+  alert('bのほうが前にあります');
+}
+
+
+5.
+var ary = new Array(); // 要素を持たない配列を作成
+for (var n = 0; n <= 10; n++) {
+  ary[n] = Math.pow(2, n); // 2のn乗を配列に代入
+}
+alert(ary.join('\n'));
+
+
+6.
+var ary = new Array();
+var temp = new Date();
+for (var i = 1; i <= 12; i++) {
+  var d = 28; // 28日からチェック開始
+  temp.setMonth(i - 1, d);
+  while(temp.getMonth() == i - 1) { // 次の月になるまでループ
+    d++;
+    temp.setDate(d);
+  }
+  ary[i] = d -1; // 次の月になる直前の日付を配列に設定
+}
+alert(ary.join('\n'));
+
+
+■第5章
+
+●練習問題　5.2
+
+3.
+var max = function (arg1, arg2) {
+  if (arg1 > arg2) {
+    return arg1;
+  }
+  return arg2;
+};
+
+●練習問題　5.3
+
+1.
+max(10, 20);
+
+3.
+var result = function(arg1, arg2) {
+  if (arg1 > arg2) {
+    return arg1;
+  }
+  return arg2;
+}(10, 20);
+
+
+// 先頭行は以下のように記述しても正解です
+function(arg1, arg2) {
+
+●練習問題　5.4
+
+1.
+function max(arg1, arg2) {
+  if (arguments.length != 2) {
+    throw new Error('引数は必ず2つ指定してください');
+  }
+  if (arg1 > arg2) {
+    return arg1;
+  }
+  return arg2;
+};
+
+//または、以下のように、arg1 とarg2 が指定されているかをチェックする方法もあります
+function max(arg1, arg2) {
+  if (arg1 == null || arg2 == null) {
+    throw new Error('引数は必ず2つ指定してください');
+  }
+  if (arg1 > arg2) {
+    return arg1;
+  }
+  return arg2;
+};
+
+
+3.
+function calcAverage(score) {
+  var count = 0; // 指定された科目の数
+  var total = 0; // 点数の合計
+  if (!score) { // 引数が指定されなかった場合は0を返す
+    return 0;
+  }
+  if (score.japanese != null) {
+    count++;
+    total += score.japanese;
+  }
+  if (score. mathematics != null) {
+    count++;
+    total += score.mathematics ;
+  }
+  if (score.english != null) {
+    count++;
+    total += score.english;
+  }
+  if (count == 0) {
+    throw new Error('少なくとも1科目は指定してください');
+  }
+  return total / count;
+}
+
+// この関数は以下のように呼び出します
+calcAverage({japanese:80, mathematics:85, english:60});
+
+
+4.
+function divideFolder(folderName) {
+  var pos = folderName.lastIndexOf('/'); // 最後の'/'を取得
+  if (pos == -1) { // 見つからなかったとき
+    document.write(folderName + '<br>'); // フォルダ名をそのまま表示
+  } else {
+    document.write(folderName + '<br>'); // フォルダ名を表示
+    var newFolder = folderName.substring(0, pos); // 親フォルダ名
+    divideFolder(newFolder); // 再帰呼び出しで親フォルダを処理
+  }
+}
+var folderName = 'c:/temp/myfolder/sample';
+divideFolder(folderName);
+
+
+●練習問題　5.5
+
+2.
+function counterOuter() {
+  var i = 0;
+  return function() {
+    i += 1;
+    return i;
+  }
+}
+counter = counterOuter();
+alert('1回目：' + counter()); // '1'
+alert('2回目：' + counter()); // '2'
+
+
+●この章の理解度チェック
+
+1.
+// カンマ区切りの文字列を分解する関数
+function comma(str) {
+  return str.split(',');
+}
+
+
+2.
+// スラッシュ区切りの文字列を分解する関数
+var slash = function(str) {
+  return str.split('/');
+}
+
+
+3.
+// 文字列でスラッシュとカンマの先に出てきたほうで分割する関数
+function divide(str) {
+  var commaPos = str.indexOf(',');
+  // 「,」見つからない場合は大きい値を代入
+  if (commaPos == -1) commaPos = Number.MAX_VALUE;
+  var slashPos = str.indexOf('/');
+  // 「/」が見つからない場合は大きい値を代入
+  if (slashPos == -1) slashPos = Number.MAX_VALUE;
+  // 値が同じなのはどちらも見つからないとき
+  if (commaPos == slashPos) {
+    return [str]; // 配列に入れて返す
+  } else if (commaPos < slashPos) {
+    return comma(str);
+  } else {
+    return slash(str);
+  }
+}
+
+
+4.
+function get(str) {
+  var s = str;
+  // カンマ区切りを分解する関数
+  function comma() {
+    var pos = s.indexOf(',');
+    var result;
+  if (pos >= 0) {
+    result = s.substr(0, pos);
+    s = s.substr(pos + 1);
+  } else {
+    result = s;
+    s = '';
+  }
+  return result;
+}
+// スラッシュ区切りを分解する関数
+function slash() {
+  var pos = s.indexOf('/');
+  var result;
+  if (pos >= 0) {
+    result = s.substr(0, pos);
+    s = s.substr(pos + 1);
+  } else {
+    result = s;
+    s = '';
+  }
+  return result;
+}
+// カンマとスラッシュのどちらか前にあるほうの分解関数を呼び出す
+return function() {
+  var commaPos = s.indexOf(',');
+  if (commaPos == -1) commaPos = Number.MAX_VALUE;
+    var slashPos = s.indexOf('/');
+    if (slashPos == -1) slashPos = Number.MAX_VALUE;
+    if (slashPos < commaPos) {
+      return slash();
+    } else {
+      return comma();
+    }
+  }
+}
+// クロージャ利用部
+var temp = get('aaa,bbb/ccc,ddd/eee');
+var value = temp();
+var i = 0;
+while (value.length > 0 && i < 100) {
+  alert(value);
+  value = temp();
+  i++;
+}
+
+
+■第6章
+
+●練習問題　6.2
+1.
+// プロパティ代入
+var rect = {};
+rect.height = 20;
+rect.width = 10;
+
+または、
+
+// 連想配列
+var rect = {};
+rect['height'] = 20;
+rect['width'] = 10;
+
+または、
+
+// オブジェクトリテラル
+var rect = {'height' : 20, 'width' : 10};
+
+
+2.
+// プロパティ参照
+var rect = {'height' : 20, 'width' : 10};
+var square = rect.height * rect.width;
+
+または、
+
+// 連想配列
+var rect = {'height' : 20, 'width' : 10};
+var square = rect['height'] * rect['width'];
+
+
+3.
+var rect = {height : 20 , width : 10};
+with (rect) {
+var square = height * width;
+}
+
+
+4.
+var rect = {height : 20 , width : 10};
+delete rect.height;
+
+
+●練習問題　6.3
+
+1.
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+}
+
+
+2.
+function Person(age, name, gender) {
+  if (!name) {
+    throw new Error('error：プロパティnameが未指定です');
+  }
+  this.age = age;
+  this.name = name;
+  this.gender = gender;
+}
+
+
+3.
+var user = new Person(20, 'James', 'male');
+
+
+4.
+function add(arg1, arg2) {
+  return arg1 + arg2;
+}
+
+var result = new add(10, 12);
+alert(result instanceof add); // 'true'
+
+
+●練習問題　6.4
+1.
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+}
+Rectangle.prototype.getSquare = function() {
+  return this.height * this.width;
+};
+var r = new Rectangle(10, 20);
+alert(r.getSquare()); // '200'
+
+2.
+function Person(age, name, gender) {
+  if (!name) {
+    throw new Error('error：プロパティnameが未指定です');
+  }
+  this.age = age;
+  this.name = name;
+  this.gender = gender;
+}
+Person.prototype.equals = function(otherPerson) {
+  if (this.age && otherPerson.age)
+    if (this.age != otherPerson.age) {
+      return false;
+    }
+  }
+  if (this.name != otherPerson.name) {
+    return false;
+  }
+  if (this.gender && otherPerson.gender)
+    if (this.gender != otherPerson.gender) {
+      return false;
+    }
+  }
+  return true;
+};
+var p1 = new Person(20, 'James', 'male');
+var p2 = new Person(20, 'Jack', 'male');
+var p3 = new Person(20, 'James');
+alert(p1.equals(p2)); // 'false';
+alert(p1.equals(p3)); // 'true';
+
+
+3.
+// エラー処理については省略
+function Person(age, name, gender) {
+  this.age = age;
+  this.name = name;
+  this.gender = gender;
+}
+Person.getGenderString = function(gender) {
+  if (gender == 'male') {
+    return '男性';
+  } else {
+    return '女性';
+  }
+};
+var maleString = Person.getGenderString('male');
+alert(maleString);
+var femaleString = Person.getGenderString('female');
+alert(femaleString);
+
+
+●練習問題　6.5
+
+2.
+// 継承元クラスの定義
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+}
+Rectangle.prototype.getSquare = function() {
+  return this.height * this.width;
+};
+// 継承クラスの定義
+function ColoredRectangle(height, width, color) {
+  this.color = color;
+  Rectangle.apply(this, [height, width]);
+}
+ColoredRectangle.prototype = new Rectangle();
+ColoredRectangle.prototype.constructor = ColoredRectangle;
+
+
+3.
+// 継承元のクラス
+function Person(age, name, gender) {
+  if (!name) {
+    throw new Error('error：プロパティnameが未指定です');
+  }
+  this.age = age;
+  this.name = name;
+  this.gender = gender;
+}
+// 継承されたクラス
+function IdentifiedPerson(age, name, gender, id) {
+  if (!id) { // idが指定されない場合は自動的にmax+1を付与
+    this.id = ++IdentifiedPerson.maxId;
+  } else { // 既存のmaxより大きいidが指定されたらmaxを更新
+    this.id = id;
+    if (id > IdentifiedPerson.maxId) {
+      IdentifiedPerson.maxId = id;
+    }
+  }
+  Person.apply(this, [age, name, gender]);
+}
+// prototypeオブジェクトの設定（nameプロパティは省略できない）
+IdentifiedPerson.prototype = new Person(null, 'temp');
+IdentifiedPerson.prototype.constructor = IdentifiedPerson;
+// 不要なprototypeプロパティを削除
+delete IdentifiedPerson.prototype.age;
+delete IdentifiedPerson.prototype.name;
+// クラス変数の初期化
+IdentifiedPerson.maxId = 0;
+// テストコード
+alert(new IdentifiedPerson(20, 'Jane').id);
+alert(new IdentifiedPerson(20, 'Jack', 'm', 50).id);
+alert(new IdentifiedPerson(20, 'James').id);
+
+
+●練習問題　6.6
+
+2.
+function ColoredRectangle(height, width, color) {
+  this.height = height;
+  this.width = width;
+  function getRGB(color) {
+    if (!color || color.length != 7) {
+      return null;
+    }
+    return [color.substr(1, 2), color.substr(3, 2),
+            color.substr(5, 2)];
+  }
+  var colAry = getRGB(color);
+  if (colAry != null) {
+    this.red = colAry[0];
+    this.green = colAry[1];
+    this.blue = colAry[2];
+  }
+}
+var col = new ColoredRectangle(10, 20, '#123456');
+alert(col.red + ' : ' + col.green + ' : ' + col.blue);
+col.getRGB('#123456'); // この呼び出しはエラーになる
+
+
+3.
+var learnYourself;
+if (!learnYourself) {
+  learnYourself = {};
+}
+learnYourself.ColoredRectangle = function(height, width, color) {
+  this.height = height;
+  this.width = width;
+  function getRGB(color) {
+    if (!color || color.length != 7) {
+      return null;
+    }
+    return [color.substr(1, 2), color.substr(3, 2),
+            color.substr(5, 2)];
+  }
+  var colAry = getRGB(color);
+  if (colAry != null) {
+    this.red = colAry[0];
+    this.green = colAry[1];
+    this.blue = colAry[2];
+  }
+}
+var r1 = new learnYourself.ColoredRectangle(10, 20,
+                                            '#123456');
+alert(r1.red + ' : ' + r1.green + ' : ' + r1.blue);
+// 以下の行はエラーになる
+var r2 = new ColoredRectangle(10, 20, '#123456');
+
+
+4.
+// 後から定義された内容で上書きされます。以下の例で確認できます
+var a = 1; // 変数を定義
+function a() { // 変数と同名の関数を定義
+  return 1;
+}
+function func() {
+  a = 'func_b'; // 同名の変数をグローバルスコープに定義
+}
+a(); // 関数を呼び出し
+func(); // 関数を呼び出し
+alert(a); // 'func_b'
+
+
+●この章の理解度チェック
+
+2.
+// カンマ区切りの文字列を分解するオブジェクト
+function CommaStringSplitter(str) {
+  if (!str || str.length == 0) {
+    throw new Error('strは必ず指定してください');
+  }
+  this.str = str;
+  this.arr = this.getArray();
+  this.pos = -1; // 現在の区切り位置
+}
+CommaStringSplitter.prototype.getArray = function() {
+return this.str.split(',');
+};
+CommaStringSplitter.prototype.getNext = function() {
+  this.pos += 1;
+  if (this.pos >= this.arr.length) { // 最後まで検索した場合
+    this.pos = -1; // 先頭に戻る
+    return null; // nullを返す
+  }
+  return this.arr[this.pos];
+};
+
+
+3.
+// 特定の文字区切りの文字列を分解するオブジェクト(親クラス)
+function AbstractStringSplitter(str, separator) {
+  if (!str || str.length == 0) {
+    throw new Error('strは必ず指定してください');
+  }
+  this.str = str;
+  this.separator = separator;
+  this.arr = this.getArray();
+  this.pos = -1; // 現在の区切り位置
+}
+AbstractStringSplitter.prototype.getArray = function() {
+  return this.str.split(this.separator);
+};
+AbstractStringSplitter.prototype.getNext = function() {
+  this.pos += 1;
+  if (this.pos >= this.arr.length) { // 最後まで検索した場合
+    this.pos = -1; // 先頭に戻る
+    return null; // nullを返す
+  }
+  return this.arr[this.pos];
+};
+// スラッシュ区切りの文字列を分解するオブジェクト
+function SlashStringSplitter(str) {
+  AbstractStringSplitter.apply(this, [str, '/']);
+}
+SlashStringSplitter.prototype = new AbstractStringSplitter('temp', '/');
+delete SlashStringSplitter.prototype.str;
+delete SlashStringSplitter.prototype.separator;
+delete SlashStringSplitter.prototype.arr;
+delete SlashStringSplitter.prototype.pos;
+SlashStringSplitter.prototype.constructor = SlashStringSplitter;
+
+
+4.
+// 名前空間オブジェクトを生成する
+var jp;
+if (!jp) {
+  jp = {};
+}
+if (!jp.learnyourself) {
+  jp.learnyourself = {};
+}
+// 特定の文字区切りの文字列を分解するオブジェクト（親クラス）
+jp.learnyourself.AbstractStringSplitter =
+    function(str, separator) {
+  if (!str || str.length == 0) {
+    throw new Error('strは必ず指定してください');
+  }
+  this.str = str;
+  this.separator = separator;
+  this.pos = -1; // 現在の区切り位置
+};
+jp.learnyourself.AbstractStringSplitter.prototype.getArray
+    = function() {
+  return this.str.split(this.separator);
+};
+jp.learnyourself.AbstractStringSplitter.prototype.getNext
+    = function() {
+  if (!this.arr) {
+    this.arr = this.getArray();
+  }
+  this.pos += 1;
+  if (this.pos >= this.arr.length) { // 最後まで検索した場合
+    this.pos = -1; // 先頭に戻る
+    return null; // nullを返す
+  }
+  return this.arr[this.pos];
+};
+// スラッシュ区切りの文字列を分解するオブジェクト
+jp.learnyourself.SlashStringSplitter = function(str) {
+jp.learnyourself.AbstractStringSplitter.apply(this,
+    [str, '/']);
+};
+with (jp.learnyourself) {
+  SlashStringSplitter.prototype = new AbstractStringSplitter('temp', '/');
+  delete SlashStringSplitter.prototype.str;
+  delete SlashStringSplitter.prototype.separator;
+  delete SlashStringSplitter.prototype.arr;
+  delete SlashStringSplitter.prototype.pos;
+  SlashStringSplitter.prototype.constructor = SlashStringSplitter;
+}
+
+
+5.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+        content="text/html;charset=Shift_JIS">
+  <title>サンプル</title>
+  <script src="jp.learnyourself.js"></script>
+  <script>
+    function test() {
+      var sa = new jp.learnyourself.SlashStringSplitter(
+               'aaa/bbb/ccc/ddd');
+      var temp = sa.getNext();
+      while (temp != null) {
+        document.write(temp + '<br>');
+        temp = sa.getNext();
+      }
+    }
+  </script>
+</head>
+<body onload='test();'>
+</body>
+</html>
+
+
+■第7章
+
+●練習問題　7.1
+
+1.
+<script>
+window.onload = function(){
+  var button = document.getElementById('button');
+  button.onclick = function(){
+    alert('こんにちは、' + document.form.name.value +
+          'さん!');
+  }
+}
+</script>
+
+<form name="form">
+  お名前をどうぞ：<input id="name" name="name" type="text">
+  <input id="button" name="button" type="button"
+         value="ボタン">
+</form>
+
+
+●練習問題　7.3
+
+4.
+<form name="form">
+  <input type="text" id="clock" size="30">
+</form>
+<script>
+setInterval(function(){
+  document.form.clock.value = new Date().toLocaleString();
+}, 1000);
+</script>
+
+
+●練習問題　7.6
+
+1.
+function jumpToUrl(){
+  var url = document.form.url.value;
+  location.href = url;
+}
+
+
+●練習問題　7.9
+
+1.
+document.form.name.value
+
+または、
+
+document.forms['form'].elements['name'].value
+
+// 第8章で説明するDOMのAPIを使うと以下のように記述できます
+document.getElementById('name').value
+
+
+2.
+for(var i=0;i<document.form.lang.length; i++){
+  document.form.lang[i].checked = true;
+}
+
+
+●練習問題　7.10
+
+3.
+document.cookie='USER_NAME=takezoe';
+document.cookie='COUNTRY=Japan';
+
+
+●この章の理解度チェック
+
+4.
+function getElement(language){
+  var ul = document.getElementById('languages');
+  var li = ul.getElementsByTagName('li');
+  for(var i=0; i<li.length; i++){
+    if(li[i].innerHTML.replace(/^\s+|\s+$/g, '') == language) {
+      return li[i];
+    }
+  }
+}
+
+
+5.
+function checkForm(){
+  for(var i=0; i<document.form.winner.length; i++){
+    if(document.form.winner[i].checked){
+      return true;
+    }
+  }
+  alert('どちらかを選択してください。');
+  return false;
+}
+
+
+■第8章
+
+●練習問題　8.2
+
+1.
+// ul要素を取得
+var ul = document.getElementById('languages');
+// 2番目のli要素を取得
+var element = ul.getElementsByTagName('li')[1];
+// li要素のテキストを変更
+element.textContent = 'CoffeeScript';
+
+
+2.
+// 追加する項目
+var languages = ["JavaScript", "Java", "Ruby"];
+// select要素を取得
+var select = document.getElementById('languages');
+// 項目を追加
+for(var i=0;i<languages.length; i++){
+  var option = document.createElement('option');
+  option.appendChild(document.createTextNode(languages[i]));
+  select.appendChild(option);
+}
+
+
+●練習問題　8.3
+
+1.
+var styleSheet = document.styleSheets[0];
+styleSheet.deleteRule(0);
+
+
+●練習問題　8.5
+
+2.
+var form = document.getElementbyId('form');
+form.addEventListener('submit', function(event) {
+  if(!confirm('フォームの内容を送信してよろしいですか？ ')) {
+    event.preventDefault();
+  }
+}, false);
+
+
+●練習問題　8.6
+
+3.
+function handleDrop(e){
+  for(var i = 0; i < e.dataTransfer.files.length; i++){
+    var file = e.dataTransfer.files[i];
+    console.log(file.name);
+  }
+  e.preventDefault();
+}
+
+
+●この章の理解度チェック
+
+1.
+function getElement(language){
+  var ul = document.getElementById('languages');
+  var li = ul.getElementsByTagName('li');
+  for(var i=0; i<li.length; i++){
+    if(li[i].innerHTML.replace(/^\s+|\s+$/g, '') == language) {
+      return li[i];
+    }
+  }
+}
+
+
+2.
+var div = document.getElementById('contents');
+var link = document.createElement('a');
+link.setAttribute('href', 'http://www.google.co.jp/');
+link.appendChild(document.createTextNode('Google'));
+div.appendChild(link);
+
+// W3C DOM のAPI を使わなくてもよければ、
+// 以下のようにinnerHTMLプロパティを使用して簡単に記述できます
+var div = document.getElementById('contents');
+div.innerHTML =
+'<a href="http://www.google.co.jp">Google</a>';
+
+
+3.
+// DOM Level 0 の場合
+var value = document.form.text_name.value;
+
+// W3C DOM の場合
+var value = document.getElementById('text_id').value;
+
+
+4.
+var element = document.getElementById('content');
+element.style.fontSize = '200%';
+
+
+7.
+setupDraggableElement(document.getElementById('li1'));
+setupDraggableElement(document.getElementById('li2'));
+setupDraggableElement(document.getElementById('li3'));
+
+// ドラッグ＆ドロップ可能な要素にイベントハンドラを設定
+fuction setupDraggableElement(element){
+  element.addEventListener('dragstart', handleDragStart);
+  element.addEventListener('drop', handleDrop);
+  element.addEventListener('dragenter', cancelEvent);
+  element.addEventListener('dragover', cancelEvent);
+}
+
+// ドラッグ開始時の処理
+function handleDragStart(e){
+  e.dataTransfer.setData('text', e.target.id);
+}
+
+// イベントのデフォルトの動作をキャンセル
+function cancelEvent(e){
+  e.preventDefault();
+}
+
+// ドロップ時の処理
+function handleDrop(e){
+  // ドラッグされた要素のHTMLを取得
+  var sourceId = e.dataTransfer.getData('text');
+  var source = document.getElementById(sourceId);
+  var sourceHTML = source.innerHTML;
+  // ドロップされた要素のHTMLを取得
+  var target = e.currentTarget;
+  var targetHTML = target.innerHTML;
+  // ドラッグされた要素とドロップされた要素のHTMLを入れ替え
+  target.innerHTML = sourceHTML;
+  source.innerHTML = targetHTML;
+
+  e.preventDefault();
+}
+
+
+■第9章
+
+●練習問題　9.2
+
+2.
+<!DOCTYPE html>
+<html>
+<body>
+<div id='result'>
+</div>
+<script>
+  var request = new window.XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 &&
+        request.status == 200) {
+      var names = request.responseXML.getElementsByTagName("name");
+      var value = names[0].firstChild.nodeValue;
+      var element = document.getElementById('result');
+      if (element.textContent) {
+        element.textContent = value;
+      } else {
+        element.innerText = value;
+      }
+    }
+  };
+  request.open('GET', '/names.xml', true);
+  request.send(null);
+</script>
+</body>
+</html>
+
+
+3.
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset="UTF-8">
+<script>
+function callbackJSON(obj) {
+  if(navigator.userAgent.toLowerCase().indexOf("firefox") != -1){
+    document.getElementById('jsonData').textContent = obj.name;
+  } else {
+    document.getElementById('jsonData').innerText = obj.name;
+  }
+}
+</script>
+</head>
+<body>
+<div id='jsonData'></div>
+<script src="http://example.com/q5_1.js"></script>
+</body>
+</html>
+
+
+●練習問題　9.3
+
+2.
+var socket = new WebSocket("ws://localhost:1337/");
+socket.send(new Date().toLocaleString());
+
+3.
+var socket = new WebSocket("ws://localhost:1337/");
+window.onload = function() {
+  socket.onmessage = function(event) {
+    alert(event.data);
+  }
+}
+
+
+●この章の理解度チェック
+
+1.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  var request = new window.XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 &&
+        request.status == 200) {
+      alert(request.responseText);
+    }
+  };
+  request.open('GET', '/q1.txt', true);
+  request.send(null);
+</script>
+</body>
+</html>
+
+
+2.
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function f_click() {
+  var request = new window.XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 &&
+      request.status == 200) {
+      var element = document.getElementById('result');
+        if (element.textContent) {
+          element.textContent = request.responseText;
+        } else {
+          element.innerText = request.responseText;
+        }
+      }
+    };
+    request.open('GET', '/q1.txt', true);
+  request.send(null);
+}
+</script>
+</head>
+<body>
+<form name='sample'>
+  <input type='button' value='ボタンを押してください'
+              onclick="f_click()"/>
+  <div id='result'/>
+</form>
+</body>
+</html>
+
+
+3.
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function refreshTips(fileName) {
+  if (!fileName) {
+    setText(''); // ファイルが指定されていない場合は空文字をセット
+    return;
+  }
+  var request = new window.XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 &&
+      request.status == 200) {
+      setText(request.responseText);
+    }
+  };
+  // 引数のファイル名をもとに情報を取得
+  request.open('GET', '/' + fileName, true);
+  request.send(null);
+  // テキストを<div>タグにセットする内部関数
+  function setText(text) {
+    var element = document.getElementById('result');
+    if (element.textContent != undefined) {
+      element.textContent = text;
+    } else {
+      element.innerText = text;
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div id='atxt' onmouseover='refreshTips("a.txt")'
+               onmouseout='refreshTips()'>a.txt</div>
+<div id='btxt' onmouseover='refreshTips("b.txt")'
+               onmouseout='refreshTips()'>b.txt</div>
+<div id='result'></div>
+</body>
+</html>
+
+
+4.
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var keyValue = {}; // キーと値の組み合わせを保持するためのオブジェクト
+// keyと値の組み合わせを登録するJSONPコールバック関数
+function register(obj) {
+  keyValue[obj.key] = obj.value;
+}
+// TIPSを更新する関数
+function refreshTips(key) {
+  if (!key) {
+    setText(''); // keyが指定されていない場合は空文字をセット
+  } else {
+    setText(keyValue[key]);
+  }
+  // テキストを<div>タグにセットする内部関数
+  function setText(text) {
+    var element = document.getElementById('result');
+    if (element.textContent != undefined) {
+      element.textContent = text;
+    } else {
+      element.innerText = text;
+    }
+  }
+}
+</script>
+</head>
+<body>
+<!-- JSONPデータを登録 -->
+<script src='http://example.com/a.js'></script>
+<script src='http://example.com/b.js'></script>
+<!-- マウスオーバーの際の処理を記述 -->
+<div id='atxt' onmouseover='refreshTips("a")'
+     onmouseout='refreshTips()'>a.js</div>
+<div id='btxt' onmouseover='refreshTips("b")'
+     onmouseout='refreshTips()'>b.js</div>
+<div id='result'></div>
+</body>
+</html>
+
+
+■第10章
+
+●練習問題　10.1
+
+1.
+$('#form')
+
+
+2.
+$('input[name=keyword] ')
+
+
+3.
+$('#form2 > input[type=submit]')
+
+
+●練習問題　10.2
+
+1.
+$('#list').append($('<li>').text('JavaScript'))
+
+
+2.
+$('#list > li:first').remove()
+
+
+3.
+$('#list').hide()
+
+
+4.
+$(function(){
+  $('#browser').change(function(){
+    $('#browserId').val($('#browser').val().join(', '));
+  });
+});
+
+
+●練習問題　10.3
+
+1.
+// clickメソッドを使用してイベントハンドラを登録
+$('#register').click(function(){
+  return confirm('登録してよろしいですか？ ');
+});
+
+または、
+
+// onメソッドを使用してイベントハンドラを登録
+$('#register').on('click', function(){
+  return confirm('登録してよろしいですか？ ');
+});
+
+
+●練習問題　10.4
+
+2.
+$.get('contents.html', function(data){
+  $('#contents').html(data);
+});
+
+●練習問題　10.5
+
+1.
+var array = [1, 2, 3];
+// 配列の各要素の値を2倍した配列を生成
+var result = $.map(array, function(e, i){
+  return e * 2;
+}); // => [2, 4, 6]
+
+
+2.
+var array = ['HTML', 'CSS', 'JavaScript', 'Java'];
+// 配列から'Java'を含む要素を抽出した配列を生成
+var result = $.grep(array, function(e, i){
+  return e.indexOf('Java') >= 0;
+}); // => ['JavaScript', 'Java']
+
+
+3.
+if($.isArray(a)){
+  // ...
+}
+
+または、
+
+if($.type(a) == 'array'){
+  // ...
+}
+
+
+●この章の理解度チェック
+
+3.
+$(function(){
+  $('#search').click(function(){
+    $.getJSON('/search-books', {
+      keyword: $('#keyword').val()
+    },function(data){
+      var ul = $('<ul>');
+      $.each(data, function(i, book){
+        ul.append($('<li>').text(book.title));
+      });
+      $('#result').html(ul);
+    });
+  });
+});
