@@ -5,6 +5,6 @@
   
 統合ブランチは？  
 - [ ] master
-- [x] perfect
+- [ ] perfect
 - [ ] himi
 - [ ] yuwa
